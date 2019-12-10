@@ -1,5 +1,5 @@
 ﻿namespace Core
 
-module Say =
-    let hello name =
-        printfn "Hello %s" name
+module Space =
+    let calculateOrbits input =
+        42
