@@ -1,7 +1,7 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open System
 open Core.Space
+open Core.SpaceTree
 
 [<EntryPoint>]
 let main argv =
@@ -2223,6 +2223,8 @@ JDK)XLL
 GWJ)J5G
 """
     let result = input |> calculateOrbits
-    printfn "result: %i" result
+    printfn "result part1: %i" result
+    let resultPart2 = input |> calculateOrbitsBetween "YOU" "SAN"
+    printfn "result part2: %i" resultPart2
 
     0 // return an integer exit code

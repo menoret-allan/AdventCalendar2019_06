@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="Parse.fs" />
+    <Compile Include="SpaceTreePart2.fs" />
+    <Compile Include="Space.fs" />
   </ItemGroup>
 
 </Project>

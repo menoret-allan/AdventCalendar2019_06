@@ -1,8 +1,9 @@
-module SpaceTests
+module SpaceTreeTests
 
 open Xunit
-open Core.Space
+open Core.SpaceTree
 open FsUnit
+
 
 [<Fact>]
 let ``Calculate total orbits direct and indirect`` () =
@@ -16,22 +17,26 @@ G)H
 D)I
 E)J
 J)K
-K)L"""
-    input |> calculateOrbits |> should equal 42
+K)L
+K)YOU
+I)SAN"""
+    input |> calculateOrbitsBetween "YOU" "SAN" |> should equal 4
 
 
 [<Fact>]
 let ``Calculate total orbits direct and indirect with unordered input`` () =
-    let input = """D)I
+    let input = """G)H
 B)C
+J)K
 C)D
+D)E
 E)F
 B)G
-G)H
+D)I
 COM)B
 E)J
-J)K
-D)E
-K)L"""
-    input |> calculateOrbits |> should equal 42
+K)L
+K)YOU
+I)SAN"""
+    input |> calculateOrbitsBetween "YOU" "SAN" |> should equal 4
 

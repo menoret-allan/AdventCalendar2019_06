@@ -1,16 +1,17 @@
 ﻿namespace Core
 
 open System
+open Parse
 
 module Space =
     type OrbitSystem = {name:string; distance:int; subsystems:OrbitSystem list}
 
-    let parseRelation (relation:string) =
-        let result = relation.Split ')'
-        (result |> Seq.head, result |> Seq.last)
+    //let parseRelation (relation:string) =
+    //    let result = relation.Split ')'
+    //    (result |> Seq.head, result |> Seq.last)
 
-    let parseInput (input:string) =
-        input.Split([|"\r\n";"\n"|], StringSplitOptions.RemoveEmptyEntries) |> Seq.map parseRelation |> Seq.toList
+    //let parseInput (input:string) =
+    //    input.Split([|"\r\n";"\n"|], StringSplitOptions.RemoveEmptyEntries) |> Seq.map parseRelation |> Seq.toList
 
     let rec addRelation a b (tree:OrbitSystem) =
         if (tree.name = a) then {name = tree.name; distance=tree.distance;subsystems=({name=b;distance=tree.distance+1;subsystems=[]}::tree.subsystems)}
